@@ -252,6 +252,35 @@ nav ::after{
 
 /*END of Classes And id's For Navigation bar*/
 
+
+/*DashBoard Classes*/
+.weekSection {
+	background: #f4f4f4;
+	padding: 15px 0 15px 69px;
+	text-align: center;
+	font-family: 'Advent Pro', sans-serif;
+	color: #cccccc;
+	font-size: 14px;
+}
+
+.title {
+	background-color: #f0865a;
+	border: solid 1px #f89406;
+	font-family: 'Advent Pro', sans-serif;
+	text-align: center;
+	font-size: 22px;
+	color: #fff;
+	padding: 10px 0 10px 0;
+	margin: 0;
+}
+
+#dashBoard {
+	background-color: #f4f4f4;
+	opacity: 50%;
+	margin: 12px 5px 0 5px;
+}
+/*end of Dahsboard Classes*/
+
 /*Profile Page Classes*/
 #profile-content{
 	padding-top: 15px;
