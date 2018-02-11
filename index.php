@@ -15,6 +15,9 @@ if(!empty($_POST["login-email"])){
 
   if(is_array($row)){
     $_SESSION["id"] = $row['id'];
+    $_SESSION["name"]=$row['name'];
+    $_SESSION["email"] =$row['email'];
+    $_SESSION["imgSrc"] = $row['imgSrc'];
     header('location:' . URL . 'Dashboard.php?id='.$_SESSION['id']);
 
   }else {

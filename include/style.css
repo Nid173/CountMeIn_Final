@@ -20,6 +20,18 @@ h1,h2{
   font-weight: 400;
 }
 
+/*multi file class*/
+
+.title-line {
+    width: 59%;
+    border-bottom: 1px solid #f0865a;
+    padding-bottom: 10px;
+}
+
+.breadcrumb{
+  background-color: transparent;
+}
+
 
 /*Classes and id's For Index Page */
 #index-main{
@@ -242,7 +254,6 @@ nav ::after{
 
 /*Profile Page Classes*/
 #profile-content{
-	border-top: 1px solid #f0865a;
 	padding-top: 15px;
 }
 
@@ -257,6 +268,23 @@ nav ::after{
     -o-transition: none;
     transition: none;
   }
+  #profile-content fieldset[disabled] .btn {
+    display: none;
+}
+#profile-content fieldset textarea{
+  resize: none;
+}
+
+
+button[name=edit-profile] {
+    position: absolute;
+    right: 0;
+    top: -38px;
+    font-size: 22px;
+    background: transparent;
+    border: none;
+    color: #f0865a;
+}
 
 
 
@@ -331,7 +359,12 @@ nav ::after{
 }
 
 @media (max-width: 767px) {
-
+/*media query multi page css*/
+.title-line{
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+}
   /* media query Navbar Mobile Device */
   .user-menu {
     max-height: 62px;
@@ -375,8 +408,12 @@ nav ::after{
 .navbar-form .form-control {
     margin-left: 0px;
 }
-  /*END media query Navbar Mobile Device */
+  /*END media query Navbar Mobile Device *
 
+/* profile mobile css*/
+#profile-content .col-xs-5{
+      margin-left: 29.16667%;
+}
 /*More media query*/
 
 }/*END mobile media Query*/

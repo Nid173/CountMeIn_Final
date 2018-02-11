@@ -8,6 +8,14 @@ session_start();
 
 if(!isset($_SESSION["id"]))
   header('Location:'.URL.'Index.php');
+
+  if(!empty($_GET['search'])){
+    $str=$_GET['search'];
+    $str=strtolower($str);
+    $query = "SELECT * FROM users_234 WHERE name ='$str'"
+    $result = mysqli_query($connection, $query);
+    $rowUser = mysqli_fetch_array($result);
+  }
 ?>
 
 
@@ -109,9 +117,27 @@ if(!isset($_SESSION["id"]))
  </form>
   </header>
 
-    <h1>Index</h1>
-    <footer class="clearfix"></footer>
+  <main>
+    <div class="container">
+      <div class="row">
+        <h1 class="title-line col-sm-offset-4"><?php echo $_SESSION['name'] ?> Result Search</h1>
+        <?php
+          if($rowUser<1){
+            echo "<p class='no-result'>No result to show</p>"
+          }else{
+            echo "<div class='col-xs-12 col-sm-5 col-sm-offset-1'><h2>Accounts</h2>";
+            echo "<div class='col-xs-12'>"
+            ."<h4>".$rowUser['name']."</h4>"
+            ."<p>".$rowUser[]
+          }
+         ?>
+      </div>
+    </div>
 
+  </main>
+    <footer>
+  		Copyright © CountMeIn 2017-2018
+  	</footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
