@@ -108,10 +108,34 @@ if(!isset($_SESSION["id"]))
    </div>
  </form>
   </header>
+    <div class="container">
+      <h1 class="col-sm-offset-4"><?php echo $_SESSION['name'] ?>'s DashBoard</h1>
+<main>
 
-    <h1>Index</h1>
-    <footer class="clearfix"></footer>
 
+    <section class="radius-top-right radius-top-left" id="dashBoard">
+      <h2 class="title radius-top-right radius-top-left">DashBoard</h2>
+      <section class="weekSection">
+        <div class="row">
+          <div></div>
+        </div>
+      </section>
+      <div class="alert alert-danger">
+        Mahmoud deleted his appointment
+      </div>
+      <div class="alert alert-warning">
+        15 min to your first appointment
+      </div>
+    </section>
+
+    </main>
+
+  </div>
+
+
+  <footer>
+    Copyright © CountMeIn 2017-2018
+  </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
