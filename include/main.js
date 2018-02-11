@@ -38,8 +38,5 @@ $(document).ready(function(){
     h1.html(hText);
     $("#profile-content fieldset").prop('disabled', false);
   });
-  $("#profile-content button[name='submit']").click(function(){
-    $(this).toggle();
-    
-  });
+
 });
