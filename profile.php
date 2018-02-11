@@ -7,7 +7,7 @@ include "joins/config.php";
 session_start();
 
 if(!isset($_SESSION["id"]))
-  header('Location:'.URL.'Index.php');
+  header('Location:'.URL.'index.php');
 
   $query = "SELECT * FROM users_234 WHERE id = '". $_SESSION['id'] ."' ";
   $result = mysqli_query($connection, $query);
