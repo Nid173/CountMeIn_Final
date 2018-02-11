@@ -21,6 +21,24 @@ h1,h2{
 }
 
 /*multi file class*/
+.radius-top-left {
+	border-top-left-radius: 35px;
+}
+.radius-top-right {
+	border-top-right-radius: 35px;
+}
+.radius-bottom-right {
+	border-bottom-right-radius: 35px;
+}
+.radius-bottom-left {
+	border-bottom-left-radius: 35px;
+}
+.bottom-border-none {
+	border-bottom: none;
+}
+.top-border-none {
+	border-top: none;
+}
 
 .title-line {
     width: 59%;
