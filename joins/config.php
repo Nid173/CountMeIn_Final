@@ -1,3 +1,3 @@
 <?php
-define ("URL","http://adham-count/")
+define ("URL","")
  ?>
