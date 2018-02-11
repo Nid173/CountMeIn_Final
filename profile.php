@@ -22,6 +22,7 @@ if(isset($_POST['save'])){
 if(!isset($_SESSION["id"]))
   header('Location:'.URL.'index.php');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> master
