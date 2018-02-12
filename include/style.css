@@ -19,6 +19,9 @@ h1,h2{
   font-family: 'Advent Pro', sans-serif;
   font-weight: 400;
 }
+.WindowContent a {
+  color:#333333;
+}
 
 /*multi file class*/
 .radius-top-left {
@@ -333,7 +336,49 @@ button[name=edit-profile] {
     color: #f0865a;
 }
 
+/*added while working on Appointments.php*/
+ .whiteLine80 {
+   width: 80%;
+   height: 50px;
+   border-bottom: 1px solid #ffffff;
+   margin:0 auto;
+ }
+ .WindowContent {
+   background: #f4f4f4;
+   padding: 0;
+   margin: 0px;
+   padding-bottom: 23px;
+ }
 
+ .WindowContent ul {
+  list-style-type: none;
+  margin: 10px 10px;
+  font-size: 16px;
+
+ }
+ .toggle {
+ 	display: inline-block;
+ 	height: 25px;
+ 	width: 25px;
+ 	background: url("../images/PLUS1.png");
+ 	background-size: 25px 25px;
+ }
+ .toggle.expanded {
+ 	height: 25px;
+ 	width: 25px;
+ 	background: url("../images/MINUS1.png");
+ 	background-size: 25px 25px;
+ }
+ .hiddenStyle {
+ 	background-color: #DBDBDB !important;
+  display:none;
+  height:150px;
+ }
+ td .dropdown-menu{
+   left:-108px;
+   top:72%;
+ }
+ /*End apointments addons*/
 
 
 /*End of*/
