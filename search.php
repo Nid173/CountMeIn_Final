@@ -12,9 +12,8 @@ if(!isset($_SESSION["id"]))
   if(!empty($_GET['search'])){
     $str=$_GET['search'];
     $str=strtolower($str);
-    $query = "SELECT * FROM users_234 WHERE name ='$str'"
+    $query = "SELECT * FROM users_234 WHERE name ='$str'";
     $result = mysqli_query($connection, $query);
-    $rowUser = mysqli_fetch_array($result);
   }
 ?>
 
@@ -99,8 +98,8 @@ if(!isset($_SESSION["id"]))
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">DashBoard <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Appointments</a></li>
+              <li><a href="DashBoard.php?id=<?php echo $_SESSION['id'];?>">DashBoard <span class="sr-only">(current)</span></a></li>
+              <li><a href="appointments.php?date=2018-02-12">Appointments</a></li>
               <li><a href="#">Call Appointments</a></li>
               <li><a href="#">SMS LOGS</a></li>
             </ul>
@@ -111,7 +110,7 @@ if(!isset($_SESSION["id"]))
       </nav>
       <form class="navbar-form" action="search.php" method="get">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" name="search" class="form-control" placeholder="Search">
           <button type="submit" class="btn btn-default">Submit</button>
    </div>
  </form>
@@ -120,17 +119,23 @@ if(!isset($_SESSION["id"]))
   <main>
     <div class="container">
       <div class="row">
-        <h1 class="title-line col-sm-offset-4"><?php echo $_SESSION['name'] ?> Result Search</h1>
+        <h1 class="title-line col-sm-offset-4">Result Search</h1>
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+          <h2 class="col-sm-offset-3">Accounts</h2>
         <?php
-          if($rowUser<1){
-            echo "<p class='no-result'>No result to show</p>"
-          }else{
-            echo "<div class='col-xs-12 col-sm-5 col-sm-offset-1'><h2>Accounts</h2>";
-            echo "<div class='col-xs-12'>"
-            ."<h4>".$rowUser['name']."</h4>"
-            ."<p>".$rowUser[]
+        if(mysqli_num_rows($result) < 1){
+          echo '<p class="noResult">No Result matches this username</p>';
+        }
+        while ($rowUser = mysqli_fetch_array($result)) {
+          echo '<a href="profile.php?id='.$rowUser['id'].'">';
+          echo '<div class="row"><div class="col-xs-3 col-sm-2 col-sm-offset-3">';
+          echo '<img class="img-responsive" src="'.$rowUser['imgSrc'].'"></div>';
+          echo '<div class="col-xs-7"><h4>'.$rowUser['name']."</h4>";
+          echo"<h5>".$rowUser['email']."</h5></div></div></a>";
           }
+
          ?>
+       </div>
       </div>
     </div>
 

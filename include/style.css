@@ -382,6 +382,7 @@ button[name=edit-profile] {
 }
 
 /*added while working on Appointments.php*/
+
  .whiteLine80 {
    width: 80%;
    height: 50px;
@@ -452,6 +453,16 @@ button[name=edit-profile] {
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
+/*appointment forn*/
+#appointments-form{
+  padding: 5px 15px;
+}
+#appointments-form .checkbox label{
+  font-size: 14px;
+}
+#appointments-form .glyphicon.glyphicon-search {
+    font-size: 16px;
+}
 
  /*Add apointment Style */
  #addappointment-form {

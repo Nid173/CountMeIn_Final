@@ -15,15 +15,27 @@ if(isset($_POST['save'])){
   // $sql ="UPDATE 234234_informations SET "
   $sql = "UPDATE 234_informations SET about='$about', birthday='$birthday' ,phone='$phone', gender='$gender' WHERE userid='".$_SESSION['id']."' ";
   if(mysqli_query($connection,$sql)){
-    header('Location:'.URL.'profile.php');
+    header('Location:'.URL.'profile.php?id='.$_SESSION['id']);
   }
 }
 
-if(!isset($_SESSION["id"]))
+if(!isset($_SESSION['id']))
   header('Location:'.URL.'index.php');
+
+  if(isset($_GET['id'])){
+  $query = "SELECT * FROM 234_informations WHERE userid = '". $_GET['id'] ."' ";
+  $query2 = "SELECT * FROM users_234 WHERE id = '". $_GET['id'] ."' ";
+  $result2 = mysqli_query($connection, $query2);
+  $row2 = mysqli_fetch_array($result2);
+}else{
   $query = "SELECT * FROM 234_informations WHERE userid = '". $_SESSION['id'] ."' ";
-  $result = mysqli_query($connection, $query);
-  $row = mysqli_fetch_array($result);
+  $query2 = "SELECT * FROM users_234 WHERE id = '". $_SESSION['id'] ."' ";
+  $result2 = mysqli_query($connection, $query2);
+  $row2 = mysqli_fetch_array($result2);
+
+}
+$result = mysqli_query($connection, $query);
+$row = mysqli_fetch_array($result);
 
 ?>
 
@@ -88,7 +100,7 @@ if(!isset($_SESSION["id"]))
                       <div class="col-sm-8 col-xs-12">
                         <h5><?php echo $_SESSION['name'];?></h5>
                         <h6><?php echo $_SESSION['email'];?></h6>
-                        <a href="profile.php">
+                        <a href="profile.php?id=<?php echo $_SESSION['id'];?>">
                         <button class="btn btn-primary" type="button" name="button">Profile</button>
                       </a>
                       </div>
@@ -110,8 +122,8 @@ if(!isset($_SESSION["id"]))
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
-              <li><a href="dashBoard.php?id=<?php echo $_SESSION['id'];?>">DashBoard <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Appointments</a></li>
+              <li><a href="DashBoard.php?id=<?php echo $_SESSION['id'];?>">DashBoard <span class="sr-only">(current)</span></a></li>
+              <li><a href="appointments.php?date=2018-02-12">Appointments</a></li>
               <li><a href="#">Call Appointments</a></li>
               <li><a href="#">SMS LOGS</a></li>
             </ul>
@@ -122,7 +134,7 @@ if(!isset($_SESSION["id"]))
       </nav>
       <form class="navbar-form">
         <class="navbar-form" action="search.php" method="get">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" name="search" class="form-control" placeholder="Search Name">
           <button type="submit" class="btn btn-default">Submit</button>
    </div>
  </form>
@@ -132,26 +144,27 @@ if(!isset($_SESSION["id"]))
 	<main>
 		<div class="container">
 			<div class="row">
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li class="active">Accessories</li>
-        </ul>
+				<h1 class="title-line col-sm-offset-4"><?php echo $row2['name'] ?>'s Profile</h1>
 
-				<h1 class="title-line col-sm-offset-4"><?php echo $_SESSION['name'] ?>'s Profile</h1>
-
-			<section class="col-sm-2 col-sm-offset-1 col-xs-12">
-				<h2>Pages</h2>
-			</section>
+        <section class="col-sm-2 col-sm-offset-1 col-xs-12">
+  				<h2>Related Pages</h2>
+          <a href="appointments.php?date=2018-02-12">
+            <button class="btn btn-default" type="button">software Department</button>
+          </a>
+  			</section>
 
 			<section id="profile-content" class="col-xs-12 col-sm-7 col-sm-offset-1">
-        <button type="button" name="edit-profile">
-          <span class="glyphicon glyphicon-edit"></span>
-        </button>
+        <?php
+        if($_SESSION['id']== $_GET['id']){
+          echo '<button type="button" name="edit-profile">';
+          echo '<span class="glyphicon glyphicon-edit"></span>';
+          echo '</button>';
+        }
+         ?>
         <form class="form-horizontal" action="" method="post">
           <fieldset disabled>
             <div class="col-xs-5 col-sm-3">
-    					<img class="img-circle img-responsive" src="<?php echo $_SESSION['imgSrc']?>">
+    					<img class="img-circle img-responsive" src="<?php echo $row2['imgSrc']?>">
     					<div id="stars" class="starrr"></div>
     				  </div>
             <div class="col-sm-8 col-xs-12">
@@ -199,7 +212,7 @@ if(!isset($_SESSION["id"]))
                     <i class="	glyphicon glyphicon-envelope"></i>
                   </label>
                   <div class="col-xs-7">
-                    <input class="form-control col-xs-7" type="email" name="email" value="<?php echo $_SESSION['email']?>">
+                    <input class="form-control col-xs-7" type="email" name="email" value="<?php echo $row2['email']?>">
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary" name="save">Save</button>

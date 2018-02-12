@@ -135,7 +135,7 @@ if(!isset($_SESSION["id"]))
          </div><!-- /. SideBar menu -->
 
           <!--Form Start Here with title -->
-          <div class="col-md-7 col-xs-12 radius-top-right WindowContent ">
+          <div class="col-md-7 col-sm-8 col-xs-12 radius-top-right WindowContent ">
             <div class="col-xs-12 title radius-top-right">
               <div id="button-side-menu" class="col-xs-2">
                 <span class="glyphicon" style="cursor:pointer" onclick="openNav()">&#xe258;&#xe258;</span>
