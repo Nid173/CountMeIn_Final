@@ -60,3 +60,14 @@ $(document).ready(function(){
 		$(this).toggleClass("expanded");
 		$(this).closest('tr').next('tr').slideToggle("fast");
 	});
+
+/*MOBILE SIDE BAR*/
+/* Open the sidenav */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+/* Close/hide the sidenav */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
