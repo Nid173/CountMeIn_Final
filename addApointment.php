@@ -97,8 +97,8 @@ if(!isset($_SESSION["id"]))
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="nav navbar-nav">
-            <li><a href="Dashboard.php">DashBoard <span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="appointments.php">Appointments</a></li>
+            <li><a href="DashBoard.php?id=<?php echo $_SESSION['id'];?>">DashBoard <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="appointments.php?date=2018-02-12">Appointments</a></li>
             <li><a href="#">Call Appointments</a></li>
             <li><a href="#">SMS LOGS</a></li>
           </ul>
@@ -109,7 +109,7 @@ if(!isset($_SESSION["id"]))
     </nav>
     <form class="navbar-form" action="search.php" method="get">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input type="text" name="search" class="form-control" placeholder="Search Name">
         <button type="submit" class="btn btn-default">Submit</button>
  </div>
 </form>

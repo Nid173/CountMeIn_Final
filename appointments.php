@@ -113,6 +113,9 @@ $result=mysqli_query($connection,"SELECT * FROM 234_appointments WHERE pageid='"
  </div>
 </form>
 </header>
+<div class="alert alert-success">
+  <strong> Success :) </strong>
+</div>
 <div class="container">
    <h1 class="col-sm-offset-4 title-line"><?php echo $_SESSION['name'] ?>'s Appointments</h1>
   <div class="row"><!-- Main row -->
@@ -175,7 +178,7 @@ $result=mysqli_query($connection,"SELECT * FROM 234_appointments WHERE pageid='"
                              <td class="alert-warning"> UnplannedTime </td>
                              <td class="alert-warning"> <?php echo date('g:i', strtotime($row["time_from"])) . "-" . date('g:i', strtotime($row["time_to"]))?> </td>
                              <td Colspan="" class="alert-warning">
-                             <a href="?Break=<?php echo $row['time_to']; ?>">
+                             <a href="?date=<?php echo $_GET['date'];?>&Break=<?php echo $row['time_to']; ?>">
                              <button  type="button" class="btn btn-success ">Mark as break</button>
                              </a>
                              <button type="button" class="btn btn-primary disabled">Set appointment</button> </td>
@@ -191,7 +194,7 @@ $result=mysqli_query($connection,"SELECT * FROM 234_appointments WHERE pageid='"
                          <td class="alert-success"> <?php echo date('g:i', strtotime($row["time_from"])) . "-" . date('g:i', strtotime($row["time_to"]))?> </td>
                          <td class="alert-success"> </td>
                          <td class="alert-success">
-                           <a href="?UnplannedTime=<?php echo $row['time_to']; ?>">
+                           <a href="?date=<?php echo $_GET['date'];?>&UnplannedTime=<?php echo $row['time_to']; ?>">
                            <span class="glyphicon glyphicon-remove alert-success"></span>
                          </a>
                          </td>
