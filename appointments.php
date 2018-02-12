@@ -19,7 +19,8 @@ if(isset($_GET['show'])){
 
   $result=mysqli_query($connection,"SELECT * FROM 234_appointments WHERE pageid='"
   .$_SESSION['id']
-  ."'and date='".$_GET[date]."'");
+  ."'and date='".$_GET[date]."'ORDER BY time_from ASC");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,14 +145,16 @@ if(isset($_GET['show'])){
    </div><!-- /. SideBar menu -->
 
    <div id="mySidenav" class="sidenav"> <!--MobileSideBar -->
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="javascript:void(0)" class="closebtn">&times;</a>
   <a href="#">Add appointment</a>
   <a href="#">Cancel appointment</a>
   <a href="#">Rate appointment</a>
 </div>
+
       <div class="col-md-8 col-sm-8 col-xs-12"><!-- Main content  -->
-        <div class="title radius-top-right bottom-border-none">
-          <div class="side-burger col-xs-3 visible-xs" onclick="openNav()"> </div>
+
+        <div class="row title radius-top-right bottom-border-none">
+          <div class="side-burger col-xs-3 visible-xs"> </div>
           <div class="whiteLine80">
             <span class="glyphicon glyphicon-triangle-left"></span>
             <?php echo $_GET['date'];?>
