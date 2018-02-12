@@ -21,8 +21,6 @@ if(isset($_POST['save'])){
 
 if(!isset($_SESSION["id"]))
   header('Location:'.URL.'index.php');
-
-
   $query = "SELECT * FROM 234_informations WHERE userid = '". $_SESSION['id'] ."' ";
   $result = mysqli_query($connection, $query);
   $row = mysqli_fetch_array($result);
