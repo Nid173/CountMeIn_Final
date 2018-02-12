@@ -75,8 +75,8 @@ $row = mysqli_fetch_array($result);
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-              <div id="brand">OuntMeIn</div>
+          <a class="navbar-brand" href="DashBoard.php?id=<?php echo $_SESSION['id'];?>">
+            <div id="brand">OuntMeIn</div>
             </a>
           </div>
           <div class="user-menu">

@@ -49,7 +49,7 @@ $result=mysqli_query($connection,"SELECT * FROM 234_appointments WHERE pageid='"
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="DashBoard.php?id=<?php echo $_SESSION['id'];?>">
             <div id="brand">OuntMeIn</div>
           </a>
         </div>
