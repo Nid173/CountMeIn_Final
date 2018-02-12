@@ -111,7 +111,7 @@ if(!isset($_SESSION["id"]))
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">DashBoard <span class="sr-only">(current)</span></a></li>
+              <li><a href="dashBoard.php?id=<?php echo $_SESSION['id'];?>">DashBoard <span class="sr-only">(current)</span></a></li>
               <li><a href="#">Appointments</a></li>
               <li><a href="#">Call Appointments</a></li>
               <li><a href="#">SMS LOGS</a></li>
