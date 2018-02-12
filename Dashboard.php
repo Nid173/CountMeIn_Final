@@ -45,7 +45,7 @@ if(!isset($_SESSION["id"]))
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="DashBoard.php?id=<?php echo $_SESSION['id'];?>">
               <div id="brand">OuntMeIn</div>
             </a>
           </div>
@@ -157,7 +157,7 @@ if(!isset($_SESSION["id"]))
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="include/js/boo.tstrap.min.js"></script>
+    <script src="include/js/bootstrap.min.js"></script>
     <script src="include/main.js"></script>
     <script src="include/getDashboard.js"></script>
 
