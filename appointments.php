@@ -9,8 +9,18 @@ if(!isset($_SESSION["id"]))
   header('Location:'.URL.'index.php');
 
 define("START_TIME","09:00:00");
+if(isset($_GET['show'])){
+  $show = $_GET['show'];
+  if($show==0){
 
-  $result=mysqli_query($connection,"SELECT * FROM 234_appointments WHERE pageid=1 ORDER BY time_from ASC");
+  }
+}
+
+
+  $result=mysqli_query($connection,"SELECT * FROM 234_appointments WHERE pageid='"
+  .$_SESSION['id']
+  ."'and date='".$_GET[date]."'ORDER BY time_from ASC");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,8 +103,8 @@ define("START_TIME","09:00:00");
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="nav navbar-nav">
-            <li><a href="Dashboard.php">DashBoard <span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="appointments.php">Appointments</a></li>
+            <li><a href="DashBoard.php?id=<?php echo $_SESSION['id'];?>">DashBoard <span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="appointments.php?date=2018-02-12">Appointments</a></li>
             <li><a href="#">Call Appointments</a></li>
             <li><a href="#">SMS LOGS</a></li>
           </ul>
@@ -105,7 +115,7 @@ define("START_TIME","09:00:00");
     </nav>
     <form class="navbar-form" action="search.php" method="get">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input type="text" name="search" class="form-control" placeholder="Search Name">
         <button type="submit" class="btn btn-default">Submit</button>
  </div>
 </form>
@@ -142,16 +152,35 @@ define("START_TIME","09:00:00");
 </div>
 
       <div class="col-md-8 col-sm-8 col-xs-12"><!-- Main content  -->
+
         <div class="row title radius-top-right bottom-border-none">
           <div class="side-burger col-xs-3 visible-xs"> </div>
           <div class="whiteLine80">
-            Today
+            <span class="glyphicon glyphicon-triangle-left"></span>
+            <?php echo $_GET['date'];?>
+            <span class="glyphicon glyphicon-triangle-right"></span>
           </div>
+
+          <form id="appointments-form" class="horizontal" action="appointments.php" method="get">
+            <div class="form-group">
+              <div class="input-group">
+                <input type="date" name="date" class="form-control" value="<?php echo $_GET['date'];?>">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
         </div>
-        <div class="row WindowContent radius-bottom-left table-responsive"> <!-- TABLE  -->
+
+
+        <div class=" WindowContent radius-bottom-left table-responsive"> <!-- TABLE  -->
 
           <!--                                TABLE -->
-          <table class="table table-striped table-responsive">
+          <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -161,7 +190,7 @@ define("START_TIME","09:00:00");
                 <th scope="col"></th>
               </tr>
             </thead>
-            <tbody id="tbody">
+            <tbody>
 
               <?php while ($row = mysqli_fetch_array($result)) {
                 if ($row["name"] == 'UnplannedTime') {?>
@@ -248,6 +277,8 @@ define("START_TIME","09:00:00");
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="include/js/bootstrap.min.js"></script>
 <script src="include/main.js"></script>
+<script src="include/getfreetime.js"></script>
+
 </body>
 
 </html>
