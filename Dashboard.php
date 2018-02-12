@@ -121,6 +121,7 @@ if(!isset($_SESSION["id"]))
             FRI<span>9</span>
           </button>
           <button class=" hidden-xs btn btn-default" type="button" value="10">
+            SAT<span>10</span>
           </button>
           <button class="btn btn-default" type="button" value="11">
             SUN<span>11</span>
