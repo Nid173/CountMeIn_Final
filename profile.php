@@ -132,8 +132,8 @@ $row = mysqli_fetch_array($result);
 
         </div><!-- /.container-fluid -->
       </nav>
-      <form class="navbar-form">
-        <class="navbar-form" action="search.php" method="get">
+      <form class="navbar-form" action="search.php" method="get">
+        <class="navbar-form">
           <input type="text" name="search" class="form-control" placeholder="Search Name">
           <button type="submit" class="btn btn-default">Submit</button>
    </div>
