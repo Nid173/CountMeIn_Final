@@ -120,9 +120,9 @@ if(isset($_GET['show'])){
  </div>
 </form>
 </header>
-<div class="alert alert-success">
+<!-- <div class="alert alert-success">
   <strong> Success :) </strong>
-</div>
+</div> -->
 <div class="container">
    <h1 class="col-sm-offset-4 title-line"><?php echo $_SESSION['name'] ?>'s Appointments</h1>
   <div class="row"><!-- Main row -->
