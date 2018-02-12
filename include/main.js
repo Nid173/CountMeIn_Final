@@ -42,6 +42,18 @@ $(document).ready(function(){
 });
 
 
+/*addAppointment buttons*/
+$(document).ready(function(){
+  $("input[name='purpose_radio']").click(function(){
+    if($(this).atrr('checked',true)){
+      return;
+    }
+    $("#otherPurpose").slideToggle("fast");
+    $("#purpose_select").attr('disabled','true');
+  });
+});
+
+
 /*Slide DOWN TOGGLE*/
 
 	$('.toggle').on("click", function(e) {
