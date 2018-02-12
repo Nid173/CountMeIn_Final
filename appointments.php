@@ -111,8 +111,7 @@ define("START_TIME","09:00:00");
 </form>
 </header>
 <div class="container">
-  <h1 class="col-sm-offset-4 title-line"><?php echo $_SESSION['name'] ?>'s Appointments</h1>
-
+   <h1 class="col-sm-offset-4 title-line"><?php echo $_SESSION['name'] ?>'s Appointments</h1>
   <div class="row"><!-- Main row -->
 
    <div class="col-md-offset-1 col-md-3 col-sm-4 hidden-xs"><!-- SideBar menu -->
@@ -134,8 +133,16 @@ define("START_TIME","09:00:00");
      </div>
 
    </div><!-- /. SideBar menu -->
+
+   <div id="mySidenav" class="sidenav"> <!--MobileSideBar -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Add appointment</a>
+  <a href="#">Cancel appointment</a>
+  <a href="#">Rate appointment</a>
+</div>
       <div class="col-md-8 col-sm-8 col-xs-12"><!-- Main content  -->
         <div class="row title radius-top-right bottom-border-none">
+          <div class="side-burger col-xs-3 visible-xs" onclick="openNav()"> </div>
           <div class="whiteLine80">
             Today
           </div>
@@ -143,7 +150,7 @@ define("START_TIME","09:00:00");
         <div class="row WindowContent radius-bottom-left table-responsive"> <!-- TABLE  -->
 
           <!--                                TABLE -->
-          <table class="table table-striped">
+          <table class="table table-striped table-responsive">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -181,7 +188,7 @@ define("START_TIME","09:00:00");
                          <td class="alert-success"> </td>
                          <td class="alert-success">
                            <a href="?UnplannedTime=<?php echo $row['time_to']; ?>">
-                           &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-remove alert-success"></span>
+                           <span class="glyphicon glyphicon-remove alert-success"></span>
                          </a>
                          </td>
                         </tr>
