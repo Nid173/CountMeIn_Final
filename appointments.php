@@ -10,7 +10,7 @@ if(!isset($_SESSION["id"]))
 
 define("START_TIME","09:00:00");
 
-  $result=mysqli_query($connection,"SELECT * FROM 234_appointments");
+  $result=mysqli_query($connection,"SELECT * FROM 234_appointments WHERE pageid=1");
 ?>
 <!DOCTYPE html>
 <html lang="en">
