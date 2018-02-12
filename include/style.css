@@ -24,6 +24,9 @@ h1,h2{
 }
 
 /*multi file class*/
+.noResult{
+
+}
 .radius-top-left {
 	border-top-left-radius: 35px;
 }
@@ -276,12 +279,39 @@ nav ::after{
 
 /*DashBoard Classes*/
 .weekSection {
-	background: #f4f4f4;
-	padding: 15px 0 15px 69px;
+  background-color: rgba(234, 232, 232, 1);
+	padding: 15px 5px;
 	text-align: center;
-	font-family: 'Advent Pro', sans-serif;
-	color: #cccccc;
-	font-size: 14px;
+}
+.weekSection button {
+    width: 12%;
+    margin-left: 1.28%;
+    border: none;
+    text-align: center;
+    background: transparent;
+    color: #cccccc;
+    	font-family: 'Advent Pro', sans-serif;
+    font-size: 14px;
+}
+.weekSection button:focus{
+  outline: none;
+}
+.weekSection button i .selected{
+    border: 1px solid #f0865a;
+}
+.weekSection button>span {
+    text-align: center;
+    border-radius: 100%;
+    padding: 10px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #eeeeee;
+    color: #000;
+}
+.weekSection button .selected {
+  border: 1px solid #f0865a;
 }
 
 .title {
@@ -296,9 +326,21 @@ nav ::after{
 }
 
 #dashBoard {
-	background-color: #f4f4f4;
 	opacity: 50%;
 	margin: 12px 5px 0 5px;
+}
+#alerts-section{
+  padding: 15px 0;
+  background: #f4f4f4;
+  background: rgba(244, 244, 244, 0.5);
+}
+.base{
+    display: block;
+    position: relative;
+    font-size: 12px;
+    color: #000;
+    left: 5px;
+    bottom: -7px;
 }
 /*end of Dahsboard Classes*/
 
@@ -451,6 +493,16 @@ button[name=edit-profile] {
 }
 
 @media (max-width: 767px) {
+
+
+  /*dashboard */
+  .weekSection button{
+    width: 20%;
+  }
+
+
+
+
 /*media query multi page css*/
 .title-line{
   width: 90%;

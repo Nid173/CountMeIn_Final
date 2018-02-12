@@ -115,19 +115,36 @@ if(!isset($_SESSION["id"]))
 
 
     <section class="radius-top-right radius-top-left" id="dashBoard">
-      <h2 class="title radius-top-right radius-top-left">DashBoard</h2>
+      <h2 class="title radius-top-right radius-top-left">Week</h2>
       <section class="weekSection">
         <div class="row">
-          <div></div>
+          <button class="hidden-xs btn btn-default" type="button" value="9">
+            FRI<span>9</span>
+          </button>
+          <button class=" hidden-xs btn btn-default" type="button" value="10">
+            SAT<span>10</span>
+          </button>
+          <button class="btn btn-default" type="button" value="11">
+            SUN<span>11</span>
+            </button>
+          <button class="btn btn-default " type="button" value="12">
+            MON<span class="selected">12</span>
+          </button>
+          <button class="btn btn-default" type="button" value="13">
+            TUE<span class=" ">13</span>
+          </button>
+          <button class="btn btn-default" type="button" value="14">
+            WED<span>14</span>
+          </button>
+          <button class="hidden-xs btn btn-default" type="button" value="15">
+            THU<span>15</span>
+          </button>
         </div>
       </section>
-      <div class="alert alert-danger">
-        Mahmoud deleted his appointment
-      </div>
-      <div class="alert alert-warning">
-        15 min to your first appointment
-      </div>
+      <section id="alerts-section">
+      </section>
     </section>
+
 
     </main>
 
@@ -142,6 +159,7 @@ if(!isset($_SESSION["id"]))
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="include/js/bootstrap.min.js"></script>
     <script src="include/main.js"></script>
+    <script src="include/getDashboard.js"></script>
 
   </body>
   <?php
