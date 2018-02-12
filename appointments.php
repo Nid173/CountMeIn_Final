@@ -126,9 +126,9 @@ define("START_TIME","09:00:00");
 
      <div class="row WindowContent radius-bottom-right">
        <ul>
-         <li> <a href="#"> <span class="glyphicon">&#xe081;</span> Add appointment </a> </li>
-         <li> <a href="#"> <span class="glyphicon">&#xe082;</span> Cancel appointment </a> </li>
-         <li> <a href="#"> <span class="glyphicon">&#xe006;</span> Rate appointment </a> </li>
+         <li><a href="addApointment.php"><span class="glyphicon">&#xe081;</span>Add appointment</a></li>
+         <li><a href="#"><span class="glyphicon">&#xe082;</span>Cancel appointment</a></li>
+         <li><a href="#"><span class="glyphicon">&#xe006;</span>Rate appointment</a></li>
        </ul>
      </div>
 
