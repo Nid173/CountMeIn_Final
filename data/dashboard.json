@@ -2,21 +2,21 @@
 	"notifaction": [
     {
 			"userid": "1",
-			"day": "12",
+			"day": 12,
 			"type": 0,
 			"message": "you next appointment at..",
 			"base": "software Department"
 		},
 		{
 			"userid": "1",
-			"day": "12",
+			"day": 12,
 			"type": 0,
 			"message": "your appointments list going to end",
 			"base": "software Department"
 		},
 		{
 			"userid": "1",
-			"day": "13",
+			"day": 13,
 			"type": 1,
 			"message": "morgan deleted his appointment",
 			"base": "software Department"

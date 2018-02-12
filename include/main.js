@@ -40,3 +40,11 @@ $(document).ready(function(){
   });
 
 });
+
+
+/*Slide DOWN TOGGLE*/
+
+	$('.toggle').on("click", function(e) {
+		$(this).toggleClass("expanded");
+		$(this).closest('tr').next('tr').slideToggle("fast");
+	});
