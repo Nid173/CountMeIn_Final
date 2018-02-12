@@ -21,8 +21,10 @@ h1,h2{
 }
 
 /*multi file class*/
-.noResult{
-
+.noResult {
+    font-size: 28px;
+    text-align: center;
+    color: #ccc;
 }
 .radius-top-left {
 	border-top-left-radius: 35px;
