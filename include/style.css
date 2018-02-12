@@ -422,10 +422,55 @@ button[name=edit-profile] {
    left:-108px;
    top:72%;
  }
+ .side-burger{
+ background: url("../images/SIDE-Burger.png") no-repeat left top;
+ background-size: 60px auto;
+ height:38px;
+ display: inline;
+ }
  /*End apointments addons*/
 
+/*MOBILE SIDE BAR*/
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.85); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
 
-/*End of*/
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f0865a;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* When mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+/*End of Mobile sidebar*/
 
 
 
@@ -501,6 +546,26 @@ button[name=edit-profile] {
   .weekSection button{
     width: 20%;
   }
+
+  /*style*/
+  .title {
+  	background-color: #fff;
+  	border: solid 1px #fff;
+  	font-family: 'Advent Pro', sans-serif;
+  	text-align: center;
+  	font-size: 22px;
+  	color: #ccc;
+  	padding: 10px 0 10px 0;
+  	margin: 0;
+  }
+
+  .whiteLine80 {
+    width: 80%;
+    height: 50px;
+    border-bottom: 1px solid #f0865a;
+    margin:0 auto;
+  }
+
 
 
 
