@@ -5,7 +5,7 @@ var lastSelected=12;
 function getId(){
   var aKeyValue = window.location.search.substring(1).split('&'),
   usrid = aKeyValue[0].split('=')[1];
-  console.log("function user:"+usrid);
+  // console.log("function user:"+usrid);
    return usrid;
 }
 
@@ -13,17 +13,17 @@ $(document).ready(function getData(){
   $("#dashBoard button").click(function(){
     day = $(this).val();
     if(lastSelected==day){
-      console.log("yes i'm");
+      // console.log("yes i'm");
       return;
     }
-    console.log("lastSelected: "+lastSelected);
-    console.log("text "+ $("button[value=" + lastSelected + "] span").text());
+    // console.log("lastSelected: "+lastSelected);
+    // console.log("text "+ $("button[value=" + lastSelected + "] span").text());
 
     $('button[value= '+ lastSelected +' ] span').removeClass('selected');
     lastSelected=day;
     $('button[value='+ lastSelected +'] span').addClass('selected');
-    console.log("new lastSelected: "+lastSelected);
-    console.log("i'm here");
+    // console.log("new lastSelected: "+lastSelected);
+    // console.log("i'm here");
     getData();
   });
   $("#alerts-section").empty();
@@ -48,7 +48,7 @@ $(document).ready(function getData(){
           shtml+=message;
           shtml+=('<span class="base">'+base+'</span></div>');
           $("#alerts-section").append(shtml);
-          console.log(shtml);
+          // console.log(shtml);
           count++;
         }
         shtml="";
