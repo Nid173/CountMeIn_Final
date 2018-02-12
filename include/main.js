@@ -45,15 +45,24 @@ $(document).ready(function(){
 /*addAppointment buttons*/
 $(document).ready(function(){
   $("input[name='purpose_radio']").click(function(){
-    if($(this).atrr('checked',true)){
+/*    if($(this).atrr('checked',true)){
       return;
-    }
+    }*/
     $("#otherPurpose").slideToggle("fast");
     $("#purpose_select").attr('disabled','true');
   });
 });
 
-
+$(document).ready(function(){
+  $("#mySidenav a:first-child").click(function(){
+    $("#mySidenav").css("width","0");
+  });
+});
+$(document).ready(function(){
+  $(".side-burger").click(function(){
+    $("#mySidenav").css("width","100%");
+  });
+});
 /*Slide DOWN TOGGLE*/
 
 	$('.toggle').on("click", function(e) {

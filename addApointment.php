@@ -7,6 +7,12 @@ session_start();
 
 if(!isset($_SESSION["id"]))
   header('Location:'.URL.'index.php');
+
+
+  $result=mysqli_query($connection,"SELECT * FROM users_234");
+  $purposes=mysqli_query($connection,"SELECT * FROM 234_purposes");
+
+
   ?>
 
 
@@ -147,14 +153,21 @@ if(!isset($_SESSION["id"]))
 
             <!-- Form content starts Here -->
             <div class="col-xs-12">
-              <form action="addAppointment-sucess.html" id="addappointment-form">
+              <form action="addAppointmentServer.php" method="post" id="addappointment-form">
 
-              <div class="form-group row">
-                <label for="customer_name" class="col-md-3 col-xs-12 col-md-offset-1">Customer:</label>
-                <div class="col-md-6 col-xs-12">
-                  <input class="form-control" name="cutomer_name" type="text" placeholder="Costumer's Profile Name" required >
-                </div>
-              </div>
+
+              <!-- Select Basic -->
+<div class="form-group row">
+  <label class="col-md-3 col-xs-12 col-md-offset-1" for="selectbasic" >Customer:</label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="name" class="form-control" >
+	    <?php while ($row = mysqli_fetch_array($result)) { ?>
+      <option value="<?php echo $row["name"]?>"><?php echo $row["name"]?>(<?php echo $row["id"]?>)</option>
+
+      <?php } ?>
+    </select>
+  </div>
+</div>
 
               <div class="form-group row ">
                 <label for="date" class="col-md-3 col-xs-12 col-md-offset-1">Date:</label>
@@ -168,20 +181,38 @@ if(!isset($_SESSION["id"]))
                 </div>
               </div>
 
+
+              <div class="form-group row ">
+                <label for="time" class="col-md-3 col-xs-12 col-md-offset-1">time:</label>
+                <div class="col-md-6 col-xs-12">
+                  <div class="input-group date">
+                    <input name="time" type="time" class="form-control">
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
               <div class="col-xs-11 col-xs-offset-1 whiteLine80">
               </div>
 
               <div class="form-group row">
                 <label for="purpose_select" class=" col-md-3 col-xs-10 col-md-offset-1">Purpose:
                 </label>
-                <div class="col-md-6 col-xs-12">
-                  <input checked type="radio" class="inline-radio" name="purpose_radio">
-                  <select class="form-control" id="purpose_select" name="purpose_select" title="Options">
-                    <option>Kill</option>
-                    <option>ghi</option>
-                  </select>
+
+                              <!-- Select Basic -->
+                  <div class="col-md-4">
+                    <select id="selectbasic" name="purpose" class="form-control" >
+                	    <?php while ($row = mysqli_fetch_array($purposes)) { ?>
+                      <option value="<?php echo $row["name"]?>"><?php echo $row["name"]?>(<?php echo $row["time"]?>)</option>
+                      <option hidden value="<?php echo $row["time"]?>"><?php echo $row["name"]?>(<?php echo $row["time"]?>)</option>
+
+                      <?php } ?>
+                    </select>
+                  </div>
                 </div>
-              </div>
+
 
 
               <div class="form-group row">
@@ -203,8 +234,8 @@ if(!isset($_SESSION["id"]))
                 </div>
               </div>
               <div class="col-sm-offset-7 col-xs-offset-2 ">
-                <button type="submit"  class="btn btn-success">set appointment</button>
-                <button type="button" class="btn btn-danger ">Cancel</button>
+                <button type="submit" name="addappointment"  class="btn btn-success">set appointment</button>
+                <button type="button"  class="btn btn-danger ">Cancel</button>
 
               </div>
 
